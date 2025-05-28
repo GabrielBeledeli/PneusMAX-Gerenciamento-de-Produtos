@@ -35,3 +35,19 @@
 canvas {
   max-height: 350px;
 }
+
+@media (max-width: 440px) {
+  .graficos-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .grafico-container {
+    padding: 8px;
+  }
+
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -80,3 +80,15 @@
 .form-edicao-botoes .cancel-btn:hover {
   background-color: #CF291D;
 }
+
+@media (max-width: 400px) {
+  .form-edicao-botoes {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .form-edicao-botoes button {
+    width: 100%;
+  }
+}
