@@ -1,0 +1,146 @@
+/* Main da tela de exclusão */
+.li-exc-main {
+    padding: 20px;
+}
+
+/* Tabela da tela de exclusão */
+.li-exc-tabela {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.li-exc-tabela th,
+.li-exc-tabela td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+.li-exc-tabela th {
+    background-color: #1D1D1D;
+    color: white;
+}
+
+.li-exc-tabela tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.li-exc-botao,
+.btn-cancelar {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    line-height: 1.2;
+    box-sizing: border-box;
+}
+
+.li-exc-botao {
+    background-color: #CF291D;
+}
+
+.li-exc-botao:hover {
+    background-color: #a92118;
+}
+
+.btn-cancelar {
+    background-color: #1D1D1D;
+    margin-left: 16px;
+}
+
+.btn-cancelar:hover {
+    background-color: #CF291D;
+}
+
+
+
+/* Responsividade até 838px */
+@media (max-width: 838px) {
+    .li-exc-tabela {
+        border: 0;
+    }
+
+    .li-exc-tabela thead {
+        display: none;
+    }
+
+    .li-exc-tabela tr {
+        display: block;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-bottom: 3px solid #1D1D1D;
+        margin-bottom: 0px;
+    }
+
+    .li-exc-tabela td {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        padding: 8px 10px;
+        border: none;
+        border-bottom: 1px solid #CF291D;
+        font-size: 14px;
+    }
+
+    .li-exc-tabela td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #555;
+        flex: 1;
+    }
+
+    .li-exc-tabela td:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Responsividade entre 839px e 1200px */
+@media (max-width: 1200px) and (min-width: 839px) {
+    .li-exc-tabela {
+        border: 0;
+    }
+
+    .li-exc-tabela thead {
+        display: none;
+    }
+
+    .li-exc-tabela tr {
+        display: block;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #CF291D;
+    }
+
+    .li-exc-tabela td {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        padding: 8px 10px;
+        border: none;
+        border-bottom: 1px solid #CF291D;
+        font-size: 14px;
+    }
+
+    .li-exc-tabela td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #555;
+        flex: 1;
+    }
+
+    .li-exc-tabela td:last-child {
+        border-bottom: none;
+    }
+}

@@ -1,0 +1,70 @@
+/* Main da tela de log */
+.log-main {
+    padding: 20px;
+}
+
+/* Tabela de log */
+.log-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.log-tabela th,
+.log-tabela td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+.log-tabela th {
+    background-color: #1D1D1D;
+    color: white;
+}
+
+.log-tabela tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+/* Responsividade até 838px para tabela de log */
+@media (max-width: 838px) {
+    .log-tabela {
+        border: 0;
+    }
+
+    .log-tabela thead {
+        display: none;
+    }
+
+    .log-tabela tr {
+        display: block;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-bottom: 3px solid #1D1D1D;
+        margin-bottom: 0px;
+    }
+
+    .log-tabela td {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        padding: 8px 10px;
+        border: none;
+        border-bottom: 1px solid #CF291D;
+        font-size: 14px;
+    }
+
+    .log-tabela td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #555;
+        flex: 1;
+    }
+
+    .log-tabela td:last-child {
+        border-bottom: none;
+    }
+
+}

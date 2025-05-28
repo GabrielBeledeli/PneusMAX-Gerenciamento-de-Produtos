@@ -1,0 +1,181 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo base do corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding-bottom: 60px;
+}
+
+/* Header */
+header {
+    position: relative;
+    background-color: #1D1D1D;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.header-logo img {
+    height: 35px;
+}
+
+.header-logo h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ECECEC;
+    text-align: center;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.header-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+}
+
+.header-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.header-nav a:hover,
+.header-nav a.ativo {
+    color: #CF291D;
+}
+
+.header-nav a.ativo {
+    border-bottom: 2px solid #E55248;
+    padding-bottom: 2px;
+}
+
+.header-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-user-info img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-user-info button {
+    background-color: #E55248;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header-user-info button:hover {
+    background-color: #a92118;
+}
+
+
+/* Footer */
+.cls-footer {
+    background-color: #131313;
+    color: #ECECEC;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Botão hamburguer */
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsividade até 838px */
+@media (max-width: 838px) {
+    header {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .header-logo {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header-logo h2 {
+        font-size: 16px;
+    }
+
+    .menu-btn {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 1000;
+    }
+
+    .header-nav,
+    .header-user-info {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #1D1D1D;
+        padding: 10px 0;
+    }
+
+    header.menu-ativo .header-nav,
+    header.menu-ativo .header-user-info {
+        display: flex;
+        position: relative;
+        z-index: 9999;
+    }
+
+    .header-user-info span {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .header-user-info img {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+    }
+
+    .header-user-info button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}

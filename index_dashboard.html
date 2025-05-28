@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PneuMax | Dashboard</title>
+    <!-- Link para os arquivos CSS -->
+    <link rel="stylesheet" href="css/style_header_footer.css" />
+    <link rel="stylesheet" href="css/style_dashboard.css">
+    <!-- Ícone da aba do navegador -->
+    <link rel="shortcut icon" href="assets/icon2.png" type="image/x-icon">
+    <!-- Script para a biblioteca Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <!-- Logo e título do sistema -->
+        <div class="header-logo">
+            <img src="assets/logo3.png" alt="Logo PneuMax" />
+            <h2>Gerenciamento de Estoque</h2>
+        </div>
+
+        <!-- Botão de menu hamburguer para navegação mobile -->
+        <button id="menu-toggle" class="menu-btn" aria-label="Abrir menu">
+            ☰
+        </button>
+
+        <!-- Menu de navegação principal -->
+        <nav class="header-nav">
+            <!-- Links de navegação, com destaque no link ativo -->
+            <a href="index_home.html">Estoque</a>
+            <a href="index_cadastro.html">Cadastrar</a>
+            <a href="index_dashboard.html" class="ativo">Dashboard</a>
+            <a href="index_log.html">Log de Ações</a>
+        </nav>
+
+        <!-- Informações do usuário logado: nome, foto e botão de logout -->
+        <div class="header-user-info">
+            <span id="nomeUsuario">Usuário</span>
+            <img src="assets/perfil.png" alt="Foto Perfil" />
+            <button id="btnLogout">Sair</button>
+        </div>
+    </header>
+
+    <!-- Dashboard -->
+<main class="dashboard-main">
+  <h2>Dashboard de Estoque</h2>
+
+  <div class="graficos-grid">
+    <section class="grafico-container">
+      <h3>Estoque por Marca</h3>
+      <canvas id="graficoMarca"></canvas>
+    </section>
+
+    <section class="grafico-container">
+      <h3>Estoque por Aro</h3>
+      <canvas id="graficoAro"></canvas>
+    </section>
+
+    <section class="grafico-container">
+      <h3>Produtos com Estoque Baixo</h3>
+      <canvas id="graficoEstoqueBaixo"></canvas>
+    </section>
+
+    <section class="grafico-container">
+      <h3>Tendência de Alterações</h3>
+      <canvas id="graficoAlteracoes"></canvas>
+    </section>
+  </div>
+</main>
+
+
+
+    <!-- Rodapé fixo da página -->
+    <footer class="cls-footer">
+        © 2025 PneuMax. Todos os direitos reservados.
+    </footer>
+
+    <!-- Script para controlar a abertura e fechamento do menu hamburguer -->
+    <script src="js/script_header_mobile.js"></script>
+    <!-- Script dashboard -->
+    <script src="js/script_dashboard.js"></script>
+    <!-- Função para fazer logout -->
+    <script src="js/script_logout.js"></script>
+</body>
+
+</html>

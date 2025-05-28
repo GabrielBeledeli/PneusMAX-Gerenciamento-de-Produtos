@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | PneuMax</title>
+    <!-- Link para o arquivo CSS específico da página de login -->
+    <link rel="stylesheet" href="css/style_login.css">
+    <!-- Ícone da aba do navegador -->
+    <link rel="shortcut icon" href="assets/icon2.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Div para o fundo decorativo da página -->
+    <div class="background"></div>
+
+    <!-- Container principal do formulário de login -->
+    <div class="login-container">
+        <!-- Logo da empresa -->
+        <img src="assets/logo1.png" alt="Logo PneuMax" class="logo">
+
+        <!-- Título de boas-vindas -->
+        <h1>Seja bem-vindo ao sistema de gerenciamento de produtos da <span>PneuMax</span></h1>
+
+        <!-- Formulário de login -->
+        <form id="loginForm">
+            <!-- Campo para o nome do usuário -->
+            <input type="text" id="usuario" placeholder="Usuário" required>
+            <!-- Campo para a senha -->
+            <input type="password" id="senha" placeholder="Senha" required>
+            <!-- Botão para enviar o formulário -->
+            <button type="submit">Entrar</button>
+            <!-- Parágrafo para exibir mensagens de erro no login -->
+            <p id="erro-login" class="erro-msg"></p>
+        </form>
+    </div>
+
+    <!-- Script JavaScript para controle do login -->
+    <script src="js/script_login.js"></script>
+</body>
+
+</html>

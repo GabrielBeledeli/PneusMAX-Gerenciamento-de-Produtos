@@ -1,0 +1,110 @@
+/* Reset básico para eliminar margens, paddings e definir box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    /* Fonte padrão para todo o site */
+}
+
+/* Define altura total para body e html, e remove barras de rolagem */
+body,
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Background com imagem */
+.background {
+    background: url('../assets/background_login.jpg') no-repeat center center/cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Fica atrás do conteúdo */
+}
+
+/* Container centralizado do formulário de login */
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centraliza no meio da tela */
+    background-color: rgba(29, 29, 29, 0.9);
+    /* Fundo escuro semi-transparente */
+    padding: 40px;
+    border-radius: 12px;
+    /* Cantos arredondados */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    /* Sombra leve */
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    /* Largura máxima para telas grandes */
+    color: #ECECEC;
+    /* Cor clara para texto */
+}
+
+/* Logo dentro do container */
+.logo {
+    width: 100%;
+    /* Ocupa toda a largura possível */
+    margin-bottom: 20px;
+    /* Espaço abaixo da logo */
+}
+
+/* Título principal da página */
+h1 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ECECEC;
+}
+
+/* Destaque da palavra PneuMax dentro do título */
+h1 span {
+    color: #CF291D;
+    /* Vermelho da paleta */
+}
+
+/* Campos de entrada (inputs) */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Foco nos campos: borda vermelha */
+input:focus {
+    outline: 2px solid #CF291D;
+}
+
+/* Botão principal */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #CF291D;
+    color: #FFF;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Efeito hover no botão */
+button:hover {
+    background-color: #a31f17;
+    /* Vermelho mais escuro */
+}
+
+/* Mensagem de erro */
+.erro-msg {
+    margin-top: 10px;
+    color: #ff6b6b;
+    /* Vermelho claro para erros */
+    font-size: 0.9rem;
+}

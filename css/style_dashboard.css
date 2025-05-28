@@ -1,0 +1,37 @@
+.dashboard-main {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.dashboard-main h2 {
+    text-align: center;
+}
+
+.graficos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.grafico-container {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+}
+
+.grafico-container h3 {
+  color: #1D1D1D;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #CF291D;
+  padding-bottom: 4px;
+}
+
+/* Opcional: para limitar altura dos gráficos */
+canvas {
+  max-height: 350px;
+}

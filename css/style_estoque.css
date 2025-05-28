@@ -1,0 +1,136 @@
+/* Main */
+.li-est-main {
+    padding: 20px;
+}
+
+/* Tabela */
+.li-est-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.li-est-tabela th,
+.li-est-tabela td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+.li-est-tabela th {
+    background-color: #1D1D1D;
+    color: white;
+}
+
+.li-est-tabela tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Botões da coluna ações */
+.acoes button {
+    margin: 2px;
+    padding: 4px 8px;
+    border: none;
+    background-color: #CF291D;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.acoes button:hover {
+    background-color: #a92118;
+}
+
+/* Responsividade até 838px */
+@media (max-width: 838px) {
+    .li-est-tabela {
+        border: 0;
+    }
+
+    .li-est-tabela thead {
+        display: none;
+    }
+
+    .li-est-tabela tr {
+        display: block;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-bottom: 3px solid #1D1D1D;
+        margin-bottom: 0px;
+    }
+
+    .li-est-tabela td {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        padding: 8px 10px;
+        border: none;
+        border-bottom: 1px solid #CF291D;
+        font-size: 14px;
+    }
+
+    .li-est-tabela td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #555;
+        flex: 1;
+    }
+
+    .li-est-tabela td:last-child {
+        border-bottom: none;
+    }
+
+    .acoes {
+        justify-content: flex-end;
+    }
+}
+
+/* Responsividade 839px a 1200px */
+@media (max-width: 1200px) and (min-width: 839px) {
+    .li-est-tabela {
+        border: 0;
+    }
+
+    .li-est-tabela thead {
+        display: none;
+    }
+
+    .li-est-tabela tr {
+        display: block;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #CF291D;
+    }
+
+    .li-est-tabela td {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        padding: 8px 10px;
+        border: none;
+        border-bottom: 1px solid #CF291D;
+        font-size: 14px;
+    }
+
+    .li-est-tabela td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #555;
+        flex: 1;
+    }
+
+    .li-est-tabela td:last-child {
+        border-bottom: none;
+    }
+
+    .acoes {
+        justify-content: flex-end;
+    }
+}

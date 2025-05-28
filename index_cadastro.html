@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PneuMax | Cadastro</title>
+    <!-- Link para os arquivos CSS  -->
+    <link rel="stylesheet" href="css/style_header_footer.css" />
+    <link rel="stylesheet" href="css/style_cadastro.css">
+    <!-- Ícone da aba do navegador -->
+    <link rel="shortcut icon" href="assets/icon2.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <!-- Logo e título do sistema -->
+        <div class="header-logo">
+            <img src="assets/logo3.png" alt="Logo PneuMax" />
+            <h2>Gerenciamento de Estoque</h2>
+        </div>
+
+        <!-- Botão de menu hamburguer para navegação mobile -->
+        <button id="menu-toggle" class="menu-btn" aria-label="Abrir menu">
+            ☰
+        </button>
+
+        <!-- Menu de navegação principal -->
+        <nav class="header-nav">
+            <!-- Links de navegação, com destaque no link ativo -->
+            <a href="index_home.html">Estoque</a>
+            <a href="index_cadastro.html" class="ativo">Cadastrar</a>
+            <a href="index_dashboard.html">Dashboard</a>
+            <a href="index_log.html">Log de Ações</a>
+        </nav>
+
+        <!-- Informações do usuário logado: nome, foto e botão de logout -->
+        <div class="header-user-info">
+            <span id="nomeUsuario">Usuário</span>
+            <img src="assets/perfil.png" alt="Foto Perfil" />
+            <button id="btnLogout">Sair</button>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main class="cadastro-main">
+        <form id="formCadastro">
+            <h2>Insira os dados do Pneu</h2>
+            <label>Marca: * <input type="text" id="marca" required></label>
+            <label>Modelo: * <input type="text" id="modelo" required></label>
+            <label>Aro: * <input type="number" id="aro" required></label>
+            <label>Medida: * <input type="text" id="medida" required></label>
+            <label>Preço: * <input type="number" step="0.01" id="preco" required></label>
+            <label>Quantidade em Estoque: * <input type="number" id="quantidade" required></label>
+
+            <h2>Especificações Técnicas</h2>
+            <label>Largura: * <input type="number" id="largura" required></label>
+            <label>Perfil: * <input type="text" id="perfil" required></label>
+            <label>Índice de Peso: <input type="text" id="indicePeso"></label>
+            <label>Índice de Velocidade: <input type="text" id="indiceVelocidade"></label>
+            <label>Tipo de Construção: * <input type="text" id="construcao" required></label>
+            <label>Tipo de Terreno: <input type="text" id="terreno"></label>
+            <label>Desenho: * <input type="text" id="desenho" required></label>
+
+            <button type="submit">Cadastrar Pneu</button>
+        </form>
+    </main>
+
+    <!-- Rodapé fixo da página -->
+    <footer class="cls-footer">
+        © 2025 PneuMax. Todos os direitos reservados.
+    </footer>
+
+    <!-- Script para controlar a abertura e fechamento do menu hamburguer -->
+    <script src="js/script_header_mobile.js"></script>
+    <!-- Função para fazer logout -->
+    <script src="js/script_logout.js"></script>
+    <!-- Script para função de cadastro -->
+    <script src="js/script_cadastro.js"></script>
+</body>
+
+</html>
