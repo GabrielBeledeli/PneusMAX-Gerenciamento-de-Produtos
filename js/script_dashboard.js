@@ -15,20 +15,19 @@ function graficoEstoqueMarca() {
       datasets: [{
         data: Object.values(dados),
         backgroundColor: [
-          '#CF291D', // vermelho principal
-          '#ECECEC', // cinza claro
-          '#1D1D1D', // preto escuro
-          '#F7C59F', // tom areia claro
-          '#B32017', // vermelho escuro (hover)
-          '#FFFFFF', // branco
-          '#2E2E2E', // cinza escuro
-          '#FF6F61', // vermelho salmão
-          '#3C3C3C', // cinza carvão
+          '#CF291D', // vermelho PneusMax
+          '#6E2C2C', // marrom escuro
+          '#F57C00', // laranja escuro
+          '#8B0000', // bordô escuro
+          '#D35400', // laranja queimado
+          '#5C4033', // café escuro
           '#A62B1F', // vermelho queimado
-          '#666666', // cinza médio
-          '#931F1D'  // vinho escuro
+          '#3C3C3C', // cinza carvão
+          '#B32017', // vermelho escuro
+          '#2E2E2E', // cinza muito escuro
+          '#A0522D', // marrom médio
+          '#1D1D1D'  // preto escuro
         ]
-
       }]
     }
   });
