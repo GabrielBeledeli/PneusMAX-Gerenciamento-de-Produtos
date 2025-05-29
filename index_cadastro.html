@@ -47,21 +47,21 @@
     <main class="cadastro-main">
         <form id="formCadastro">
             <h2>Insira os dados do Pneu</h2>
-            <label>Marca: * <input type="text" id="marca" required></label>
-            <label>Modelo: * <input type="text" id="modelo" required></label>
-            <label>Aro: * <input type="number" id="aro" required></label>
-            <label>Medida: * <input type="text" id="medida" required></label>
-            <label>Preço: * <input type="number" step="0.01" id="preco" required></label>
-            <label>Quantidade em Estoque: * <input type="number" id="quantidade" required></label>
+            <label>Marca: * <input type="text" id="marca" required maxlength="20"></label>
+            <label>Modelo: * <input type="text" id="modelo" required maxlength="30"></label>
+            <label>Aro: * <input type="text" id="aro" required maxlength="2" oninput="this.value = this.value.replace(/\D/g, '')"></label>
+            <label>Medida: * <input type="text" id="medida" required maxlength="10"></label>
+            <label>Preço: * <input type="text" id="preco" required maxlength="8"></label>
+            <label>Quantidade em Estoque: * <input type="text" id="quantidade" required maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')"></label>
 
             <h2>Especificações Técnicas</h2>
-            <label>Largura: * <input type="number" id="largura" required></label>
-            <label>Perfil: * <input type="text" id="perfil" required></label>
-            <label>Índice de Peso: <input type="text" id="indicePeso"></label>
-            <label>Índice de Velocidade: <input type="text" id="indiceVelocidade"></label>
-            <label>Tipo de Construção: * <input type="text" id="construcao" required></label>
-            <label>Tipo de Terreno: <input type="text" id="terreno"></label>
-            <label>Desenho: * <input type="text" id="desenho" required></label>
+            <label>Largura: * <input type="text" id="largura" required maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')"></label>
+            <label>Perfil: * <input type="text" id="perfil" required maxlength="3"></label>
+            <label>Índice de Peso: <input type="text" id="indicePeso" maxlength="20"></label>
+            <label>Índice de Velocidade: <input type="text" id="indiceVelocidade" maxlength="20"></label>
+            <label>Tipo de Construção: * <input type="text" id="construcao" required maxlength="20"></label>
+            <label>Tipo de Terreno: <input type="text" id="terreno" maxlength="2"></label>
+            <label>Desenho: * <input type="text" id="desenho" required maxlength="15"></label>
 
             <button type="submit">Cadastrar Pneu</button>
         </form>

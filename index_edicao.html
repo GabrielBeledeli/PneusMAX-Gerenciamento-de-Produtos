@@ -48,57 +48,57 @@
     <h2>Editar Produto</h2>
     <form id="formEditarProduto">
       <label for="marca">Marca
-        <input type="text" id="marca" name="marca" required />
+        <input type="text" id="marca" name="marca" required maxlength="20"/>
       </label>
 
       <label for="modelo">Modelo
-        <input type="text" id="modelo" name="modelo" required />
+        <input type="text" id="modelo" name="modelo" required maxlength="30"/>
       </label>
 
       <label for="aro">Aro
-        <input type="number" id="aro" name="aro" required min="10" max="30" />
+        <input type="text" id="aro" name="aro" required maxlength="2" oninput="this.value = this.value.replace(/\D/g, '')"/>
       </label>
 
       <label for="medida">Medida
-        <input type="text" id="medida" name="medida" required />
+        <input type="text" id="medida" name="medida" required maxlength="10"/>
       </label>
 
       <label for="preco">Preço (R$)
-        <input type="number" id="preco" name="preco" required step="0.01" min="0" />
+        <input type="text" id="preco" name="preco" required maxlength="8"/>
       </label>
 
       <label for="quantidade_estoque">Quantidade em Estoque
-        <input type="number" id="quantidade_estoque" name="quantidade_estoque" required min="0" />
+        <input type="text" id="quantidade_estoque" name="quantidade_estoque" required maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')" />
       </label>
 
       <h3>Especificações</h3>
 
       <label for="largura">Largura
-        <input type="text" id="largura" name="largura" />
+        <input type="text" id="largura" name="largura" required maxlength="3" oninput="this.value = this.value.replace(/\D/g, '')"/>
       </label>
 
       <label for="perfil">Perfil
-        <input type="text" id="perfil" name="perfil" />
+        <input type="text" id="perfil" name="perfil" required maxlength="3"/>
       </label>
 
       <label for="indice_peso">Índice de Peso
-        <input type="text" id="indice_peso" name="indice_peso" />
+        <input type="text" id="indice_peso" name="indice_peso" maxlength="20"/>
       </label>
 
       <label for="indice_velocidade">Índice de Velocidade
-        <input type="text" id="indice_velocidade" name="indice_velocidade" />
+        <input type="text" id="indice_velocidade" name="indice_velocidade" maxlength="20"/>
       </label>
 
       <label for="tipo_construcao">Tipo de Construção
-        <input type="text" id="tipo_construcao" name="tipo_construcao" />
+        <input type="text" id="tipo_construcao" name="tipo_construcao" required maxlength="20"/>
       </label>
 
       <label for="tipo_terreno">Tipo de Terreno
-        <input type="text" id="tipo_terreno" name="tipo_terreno" />
+        <input type="text" id="tipo_terreno" name="tipo_terreno" maxlength="2"/>
       </label>
 
       <label for="desenho">Desenho
-        <input type="text" id="desenho" name="desenho" />
+        <input type="text" id="desenho" name="desenho" required maxlength="15"/>
       </label>
 
       <div class="form-edicao-botoes">

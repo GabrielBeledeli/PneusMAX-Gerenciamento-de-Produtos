@@ -12,6 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'index_login.html';
     }
 
+    const precoInput = document.getElementById('preco');
+
+    // Máscara dinâmica de moeda (pt-BR)
+    precoInput.addEventListener('input', function (e) {
+        let valor = this.value.replace(/\D/g, '');
+        if (valor.length > 8) valor = valor.slice(0, 8); // Limita a 8 dígitos
+        valor = (parseInt(valor, 10) || 0).toString();
+        valor = (parseInt(valor, 10) / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        this.value = valor;
+    });
+
     // Adiciona listener para o evento de envio do formulário
     form.addEventListener('submit', function (e) {
         e.preventDefault(); // Prevê o comportamento padrão de recarregar a página
@@ -21,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const modelo = document.getElementById('modelo').value.trim();
         const aro = parseInt(document.getElementById('aro').value);
         const medida = document.getElementById('medida').value.trim();
-        const preco = parseFloat(document.getElementById('preco').value);
+        const precoStr = document.getElementById('preco').value;
+        const preco = parseFloat(precoStr.replace(/\./g, '').replace(',', '.'));
         const quantidade = parseInt(document.getElementById('quantidade').value);
 
         const largura = parseInt(document.getElementById('largura').value);
@@ -38,7 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Preencha todos os campos obrigatórios.');
             return;
         }
-
+        if (aro < 10 || aro > 30) {
+            alert('O aro deve estar entre 10 e 30.');
+            return;
+        }
+        if (preco <= 0) {
+            alert('O preço deve ser maior que zero.');
+            return;
+        }
         // Recupera os arrays armazenados no localStorage, ou inicializa vazios
         const pneus = JSON.parse(localStorage.getItem('pneus')) || [];
         const especificacoes = JSON.parse(localStorage.getItem('especificacoes')) || [];

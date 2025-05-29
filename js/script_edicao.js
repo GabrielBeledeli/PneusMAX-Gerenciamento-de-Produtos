@@ -65,19 +65,29 @@ function salvarAlteracoes(event) {
   const especIndex = especificacoes.findIndex(e => e.id_especificacao === idPneu);
 
   // Pegar valores do formulário para pneu
-  const updatedPneu = {
-    ...pneus[pneuIndex],
-    marca: document.getElementById('marca').value.trim(),
-    modelo: document.getElementById('modelo').value.trim(),
-    aro: parseInt(document.getElementById('aro').value),
-    medida: document.getElementById('medida').value.trim(),
-    preco: parseFloat(document.getElementById('preco').value),
-    quantidade_estoque: parseInt(document.getElementById('quantidade_estoque').value),
-  };
+  const marca = document.getElementById('marca').value.trim();
+  const modelo = document.getElementById('modelo').value.trim();
+  const aro = parseInt(document.getElementById('aro').value);
+  const medida = document.getElementById('medida').value.trim();
+  const precoStr = document.getElementById('preco').value;
+  // Conversão correta do valor da moeda
+  const preco = parseFloat(precoStr.replace(/\./g, '').replace(',', '.'));
+  const quantidade_estoque = parseInt(document.getElementById('quantidade_estoque').value);
+
+  // Validação do aro
+  if (isNaN(aro) || aro < 10 || aro > 30) {
+    alert('O aro deve estar entre 10 e 30.');
+    return;
+  }
+  // Validação do preço
+  if (isNaN(preco) || preco <= 0) {
+    alert('Informe um preço válido.');
+    return;
+  }
 
   // Pegar valores do formulário para especificação
   const updatedEspec = {
-    id_especificacao: idPneu,  // id da URL, que corresponde ao id_especificacao
+    id_especificacao: idPneu,
     largura: document.getElementById('largura').value.trim(),
     perfil: document.getElementById('perfil').value.trim(),
     indice_peso: document.getElementById('indice_peso').value.trim(),
@@ -88,7 +98,15 @@ function salvarAlteracoes(event) {
   };
 
   // Atualizar arrays
-  pneus[pneuIndex] = updatedPneu;
+  pneus[pneuIndex] = {
+    ...pneus[pneuIndex],
+    marca,
+    modelo,
+    aro,
+    medida,
+    preco,
+    quantidade_estoque,
+  };
 
   if (especIndex !== -1) {
     especificacoes[especIndex] = updatedEspec;
@@ -103,7 +121,7 @@ function salvarAlteracoes(event) {
   const novoIdLog = logs.length ? Math.max(...logs.map(l => l.id_log)) + 1 : 1;
   const novoLog = {
     id_log: novoIdLog,
-    id_pneu: updatedPneu.id_pneu,
+    id_pneu: idPneu,
     id_usuario: usuarioLogado?.id_usuario || null,
     acao: 'Edição',
     data_hora: new Date().toISOString()
@@ -124,6 +142,16 @@ function cancelarEdicao() {
 
 document.addEventListener('DOMContentLoaded', () => {
   carregarProduto();
+
+  // Máscara dinâmica de moeda (pt-BR) para o campo de preço
+  const precoInput = document.getElementById('preco');
+  precoInput.addEventListener('input', function () {
+    let valor = this.value.replace(/\D/g, '');
+    if (valor.length > 8) valor = valor.slice(0, 8);
+    valor = (parseInt(valor, 10) || 0).toString();
+    valor = (parseInt(valor, 10) / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    this.value = valor;
+  });
 
   document.getElementById('formEditarProduto').addEventListener('submit', salvarAlteracoes);
   document.getElementById('btnCancelar').addEventListener('click', cancelarEdicao);
