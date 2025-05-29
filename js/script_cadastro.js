@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const aro = parseInt(document.getElementById('aro').value);
         const medida = document.getElementById('medida').value.trim();
         const precoStr = document.getElementById('preco').value;
-        const preco = parseFloat(precoStr.replace(/\./g, '').replace(',', '.'));
+        const preco = parseFloat(precoStr.replace(/\./g, '').replace(',', '.')); 
         const quantidade = parseInt(document.getElementById('quantidade').value);
 
         const largura = parseInt(document.getElementById('largura').value);

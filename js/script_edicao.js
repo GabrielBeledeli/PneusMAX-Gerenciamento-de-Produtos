@@ -36,13 +36,13 @@ function carregarProduto() {
   document.getElementById('quantidade_estoque').value = pneu.quantidade_estoque;
 
   // Preencher campos da especificação
-  document.getElementById('largura').value = espec.largura || '';
-  document.getElementById('perfil').value = espec.perfil || '';
-  document.getElementById('indice_peso').value = espec.indice_peso || '';
-  document.getElementById('indice_velocidade').value = espec.indice_velocidade || '';
-  document.getElementById('tipo_construcao').value = espec.tipo_construcao || '';
-  document.getElementById('tipo_terreno').value = espec.tipo_terreno || '';
-  document.getElementById('desenho').value = espec.desenho || '';
+  document.getElementById('largura').value = espec.largura;
+  document.getElementById('perfil').value = espec.perfil;
+  document.getElementById('indice_peso').value = espec.indice_peso;
+  document.getElementById('indice_velocidade').value = espec.indice_velocidade;
+  document.getElementById('tipo_construcao').value = espec.tipo_construcao;
+  document.getElementById('tipo_terreno').value = espec.tipo_terreno;
+  document.getElementById('desenho').value = espec.desenho;
 }
 
 // Salvar alterações no localStorage e atualizar log
@@ -90,10 +90,10 @@ function salvarAlteracoes(event) {
     id_especificacao: idPneu,
     largura: document.getElementById('largura').value.trim(),
     perfil: document.getElementById('perfil').value.trim(),
-    indice_peso: document.getElementById('indice_peso').value.trim(),
-    indice_velocidade: document.getElementById('indice_velocidade').value.trim(),
+    indice_peso: document.getElementById('indice_peso').value.trim() || 'Não Especificado',
+    indice_velocidade: document.getElementById('indice_velocidade').value.trim() || 'Não Especificado',
     tipo_construcao: document.getElementById('tipo_construcao').value.trim(),
-    tipo_terreno: document.getElementById('tipo_terreno').value.trim(),
+    tipo_terreno: document.getElementById('tipo_terreno').value.trim() || 'Não Especificado',
     desenho: document.getElementById('desenho').value.trim(),
   };
 
