@@ -14,7 +14,21 @@ function graficoEstoqueMarca() {
       labels: Object.keys(dados),
       datasets: [{
         data: Object.values(dados),
-        backgroundColor: ['#CF291D', '#ECECEC', '#1D1D1D', '#777']
+        backgroundColor: [
+          '#CF291D', // vermelho principal
+          '#ECECEC', // cinza claro
+          '#1D1D1D', // preto escuro
+          '#F7C59F', // tom areia claro
+          '#B32017', // vermelho escuro (hover)
+          '#FFFFFF', // branco
+          '#2E2E2E', // cinza escuro
+          '#FF6F61', // vermelho salmão
+          '#3C3C3C', // cinza carvão
+          '#A62B1F', // vermelho queimado
+          '#666666', // cinza médio
+          '#931F1D'  // vinho escuro
+        ]
+
       }]
     }
   });
