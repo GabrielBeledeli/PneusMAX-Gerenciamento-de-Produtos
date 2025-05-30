@@ -79,12 +79,14 @@
 
 ## 🔧 Como Executar o Projeto
 
-1. **Abra o sistema pelo link: 
+1. **Abra o sistema pelo link: [https://pneus-max-gerenciamento-de-produtos.vercel.app/index.html](https://pneus-max-gerenciamento-de-produtos.vercel.app/index.html).
 2. **Faça login** usando um dos usuários padrão acima.
 3. **Navegue** pelas funcionalidades do sistema normalmente.
 
 > **Observação:**  
 > O sistema é totalmente front-end. Todos os dados são salvos no `localStorage` do navegador.
+> O sistema está hospedado via [Vercel](https://vercel.com/).
+> A fins de organização do projeto, criamos este repositório somente com o desenvolvimento Web, para acesso ao repositório principal clique [aqui](https://github.com/GabrielBeledeli/Desafio-Integrador-2025.1---Engenharia-de-Software-3-Periodo.git).
 
 ---
 
